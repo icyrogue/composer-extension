@@ -16,7 +16,6 @@ chrome.commands.onCommand.addListener((command) => {
         console.log(hidden);
         const response = await chrome.tabs.sendMessage(tabs[0].id, {command: hidden});
         hidden = response.hidden
-        console.log(response);
       })();
     });
   }

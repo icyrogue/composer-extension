@@ -24,7 +24,7 @@
       "run_at": "document_end",
       "matches": [
         "https://docs.google.com/presentation/*",
-        "https://www.youtube.com/*"
+        "https://www.youtube.com/embed/*"
       ]
     }
   ],

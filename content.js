@@ -1,7 +1,6 @@
 (() => {
   const onYT = document.URL.includes("youtube.com/embed")
   if (!onYT) {
-    console.log(document.URL)
       return;
   }
   hide()
