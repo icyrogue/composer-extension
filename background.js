@@ -6,14 +6,16 @@ chrome.runtime.onInstalled.addListener(function() {
   return false;
 });
 
+var hidden = true;
+
 chrome.commands.onCommand.addListener((command) => {
-  console.log(command)
   // if the user invokes the "hide" command...
   if (command === "hide") {
         chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
       (async () => {
-  console.log(tabs)
-        const response = await chrome.tabs.sendMessage(tabs[0].id, {command: "hide"});
+        console.log(hidden);
+        const response = await chrome.tabs.sendMessage(tabs[0].id, {command: hidden});
+        hidden = response.hidden
         console.log(response);
       })();
     });
