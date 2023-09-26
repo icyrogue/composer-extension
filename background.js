@@ -8,6 +8,13 @@ chrome.runtime.onInstalled.addListener(function() {
 
 var hidden = true;
 
+
+chrome.runtime.onMessage.addListener(function(message, sender) {
+    if (message.show != null) {
+        chrome.tabs.sendMessage(sender.tab.id, message);
+    }
+});
+
 chrome.commands.onCommand.addListener((command) => {
   // if the user invokes the "hide" command...
   if (command === "hide") {
