@@ -5,9 +5,9 @@
   if (!onYT) {
       var intv = setInterval(() => { 
       iframe = document.querySelectorAll('[id$=".pl"]')[0]
+      topLayer = document.querySelectorAll('image')[1]
       if (iframe) {
       iframe.style.opacity = "0"
-      topLayer = document.querySelectorAll('[id$="_1_0"]')[0]
       }
       }, 500);
       chrome.runtime.onMessage.addListener(
@@ -19,7 +19,7 @@
     console.log("__________________________________________________________________________")
     console.log("Showing the iframe")
     console.log("__________________________________________________________________________")
-    // if (!counter) {
+    // if (!counter) {this is a test 
     //             document.querySelectorAll('[id$=".pl"]')[0].style.opacity = "0"
     //             document.querySelectorAll('[id$="_1_0"]')[0].style.opacity = "0"
     //             counter = true
@@ -29,8 +29,8 @@
                 clearInterval(intv)
               // }
           } else {
-            iframe.style.opacity = "0"
             topLayer.style.opacity = "0"
+            iframe.style.opacity = "0"
         }
         }
       );
